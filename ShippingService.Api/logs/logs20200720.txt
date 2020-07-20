@@ -1,0 +1,64 @@
+2020-07-20 08:30:12.526 +02:00 [INF] Declaring a queue: 'customer-service/examples.shipment_created' with routing key: 'shipment_created' for an exchange: 'examples'.
+2020-07-20 08:30:13.127 +02:00 [INF] Outbox is enabled, type: 'Sequential', message processing every 2000 ms.
+2020-07-20 08:30:14.325 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5003/api  
+2020-07-20 08:30:14.354 +02:00 [ERR] Connection id "0HM1CEPE1I2S9", Request id "0HM1CEPE1I2S9:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: No service for type 'Convey.WebApi.Exceptions.ErrorHandlerMiddleware' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Http.MiddlewareFactory.Create(Type middlewareType)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-07-20 08:30:14.521 +02:00 [INF] Request finished in 206.2601ms 500 
+2020-07-20 08:41:40.342 +02:00 [INF] Declaring a queue: 'customer-service/examples.shipment_created' with routing key: 'shipment_created' for an exchange: 'examples'.
+2020-07-20 08:41:40.917 +02:00 [INF] Outbox is enabled, type: 'Sequential', message processing every 2000 ms.
+2020-07-20 08:41:42.151 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5003/api  
+2020-07-20 08:41:42.190 +02:00 [ERR] Connection id "0HM1CEVR1Q6KU", Request id "0HM1CEVR1Q6KU:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: No service for type 'Convey.WebApi.Exceptions.ErrorHandlerMiddleware' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Http.MiddlewareFactory.Create(Type middlewareType)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-07-20 08:41:42.272 +02:00 [INF] Request finished in 125.8301ms 500 
+2020-07-20 08:50:04.623 +02:00 [INF] Declaring a queue: 'customer-service/examples.shipment_created' with routing key: 'shipment_created' for an exchange: 'examples'.
+2020-07-20 08:50:05.145 +02:00 [INF] Outbox is enabled, type: 'Sequential', message processing every 2000 ms.
+2020-07-20 08:50:06.576 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5003/api  
+2020-07-20 08:50:06.607 +02:00 [ERR] Connection id "0HM1CF4HADM6V", Request id "0HM1CF4HADM6V:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: No service for type 'Convey.WebApi.Exceptions.ErrorHandlerMiddleware' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Http.MiddlewareFactory.Create(Type middlewareType)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-07-20 08:50:06.722 +02:00 [INF] Request finished in 151.9325ms 500 
+2020-07-20 08:51:31.754 +02:00 [INF] Declaring a queue: 'customer-service/examples.shipment_created' with routing key: 'shipment_created' for an exchange: 'examples'.
+2020-07-20 08:51:32.300 +02:00 [INF] Outbox is enabled, type: 'Sequential', message processing every 2000 ms.
+2020-07-20 08:51:33.439 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5003/api  
+2020-07-20 08:51:33.462 +02:00 [ERR] Connection id "0HM1CF5B92R0D", Request id "0HM1CF5B92R0D:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: No service for type 'Convey.WebApi.Exceptions.ErrorHandlerMiddleware' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Http.MiddlewareFactory.Create(Type middlewareType)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2020-07-20 08:51:33.548 +02:00 [INF] Request finished in 116.0099ms 500 
+2020-07-20 09:07:45.454 +02:00 [INF] Declaring a queue: 'customer-service/examples.shipment_created' with routing key: 'shipment_created' for an exchange: 'examples'.
+2020-07-20 09:07:45.966 +02:00 [INF] Outbox is enabled, type: 'Sequential', message processing every 2000 ms.
+2020-07-20 09:07:46.866 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5003/api  
+2020-07-20 09:07:46.964 +02:00 [INF] Executing endpoint 'ShippingService.Api.Controllers.HomeController.HealthCheckMethod (ShippingService.Api)'
+2020-07-20 09:07:47.014 +02:00 [INF] Route matched with {action = "HealthCheckMethod", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult HealthCheckMethod() on controller ShippingService.Api.Controllers.HomeController (ShippingService.Api).
+2020-07-20 09:07:47.029 +02:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-07-20 09:07:47.054 +02:00 [INF] Executed action ShippingService.Api.Controllers.HomeController.HealthCheckMethod (ShippingService.Api) in 20.2859ms
+2020-07-20 09:07:47.078 +02:00 [INF] Executed endpoint 'ShippingService.Api.Controllers.HomeController.HealthCheckMethod (ShippingService.Api)'
+2020-07-20 09:07:47.133 +02:00 [INF] Request finished in 273.2486ms 200 application/json
+2020-07-20 09:07:47.199 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5003/favicon.ico  
+2020-07-20 09:07:47.205 +02:00 [INF] Request finished in 5.9772ms 404 
+2020-07-20 09:16:11.779 +02:00 [INF] Declaring a queue: 'customer-service/examples.shipment_created' with routing key: 'shipment_created' for an exchange: 'examples'.
+2020-07-20 09:16:12.747 +02:00 [INF] Outbox is enabled, type: 'Sequential', message processing every 2000 ms.
+2020-07-20 09:16:14.075 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5003/api  
+2020-07-20 09:16:14.189 +02:00 [INF] Executing endpoint 'ShippingService.Api.Controllers.HomeController.HealthCheckMethod (ShippingService.Api)'
+2020-07-20 09:16:14.232 +02:00 [INF] Route matched with {action = "HealthCheckMethod", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult HealthCheckMethod() on controller ShippingService.Api.Controllers.HomeController (ShippingService.Api).
+2020-07-20 09:16:14.246 +02:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-07-20 09:16:14.285 +02:00 [INF] Executed action ShippingService.Api.Controllers.HomeController.HealthCheckMethod (ShippingService.Api) in 19.1664ms
+2020-07-20 09:16:14.329 +02:00 [INF] Executed endpoint 'ShippingService.Api.Controllers.HomeController.HealthCheckMethod (ShippingService.Api)'
+2020-07-20 09:16:14.351 +02:00 [INF] Request finished in 282.5989ms 200 application/json

@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <OutputType>Library</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Convey" Version="0.4.330" />
+        <PackageReference Include="Convey.CQRS.Commands" Version="0.4.330" />
+        <PackageReference Include="Convey.CQRS.Events" Version="0.4.330" />
+        <PackageReference Include="Convey.CQRS.Queries" Version="0.4.330" />
+        <PackageReference Include="Convey.Discovery.Consul" Version="0.4.330" />
+        <PackageReference Include="Convey.Docs.Swagger" Version="0.4.330" />
+        <PackageReference Include="Convey.HTTP" Version="0.4.330" />
+        <PackageReference Include="Convey.Logging" Version="0.4.330" />
+        <PackageReference Include="Convey.MessageBrokers" Version="0.4.330" />
+        <PackageReference Include="Convey.MessageBrokers.CQRS" Version="0.4.330" />
+        <PackageReference Include="Convey.MessageBrokers.Outbox" Version="0.4.330" />
+        <PackageReference Include="Convey.MessageBrokers.Outbox.Mongo" Version="0.4.330" />
+        <PackageReference Include="Convey.MessageBrokers.RabbitMQ" Version="0.4.330" />
+        <PackageReference Include="Convey.Persistence.MongoDB" Version="0.4.330" />
+        <PackageReference Include="Convey.WebApi" Version="0.4.330" />
+        <PackageReference Include="Convey.WebApi.CQRS" Version="0.4.330" />
+        <PackageReference Include="Convey.WebApi.Swagger" Version="0.4.330" />
+        <PackageReference Include="Grpc.AspNetCore" Version="2.27.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Properties\launchSettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ShippingService.Core\ShippingService.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Commands\Handlers" />
+      <Folder Include="Events\RejectedEvents" />
+    </ItemGroup>
+
+</Project>
