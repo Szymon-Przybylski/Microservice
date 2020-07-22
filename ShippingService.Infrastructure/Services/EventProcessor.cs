@@ -34,7 +34,6 @@ namespace ShippingService.Infrastructure.Services
             }
 
             List<IEvent> integrationEvents = await HandleDomainEventsAsync(events);
-            Console.WriteLine("was here!");
             if (!integrationEvents.Any())
             {
                 return;
@@ -51,9 +50,7 @@ namespace ShippingService.Infrastructure.Services
             {
                 var eventType = eve.GetType();
                 _logger.LogTrace($"Handling a domain event: {eventType.Name}");
-
                 var handlerType = typeof(IDomainEventHandler<>).MakeGenericType(eventType);
-
                 dynamic handlers = scope.ServiceProvider.GetServices(handlerType);
                 foreach (dynamic handler in handlers)
                 {
