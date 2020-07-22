@@ -6,11 +6,11 @@ using ShippingService.Core.Events.Abstract;
 namespace ShippingService.Application.Events.External
 {
     [Message("shipment")]
-    public class ShipmentCreated : IEvent
+    public class ShipmentCompleted : IEvent
     {
         public Guid Id { get; set; }
         
-        public ShipmentCreated (Guid id)
+        public ShipmentCompleted (Guid id)
         {
             Id = id;
         }

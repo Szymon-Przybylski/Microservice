@@ -12,19 +12,13 @@ using ShippingService.Core.Repositories;
 
 namespace ShippingService.Application.Events.External.Handlers
 {
-    public class ShipmentCreatedHandler : IEventHandler<ShipmentCreated>
+    public class ShipmentCompletedHandler : IEventHandler<ShipmentCompleted>
     {
-        private readonly IShipmentRepository _shipmentRepository;
-        private readonly IMessageBroker _messageBroker;
-        private readonly IEventProcessor _eventProcessor;
 
-        public ShipmentCreatedHandler(IShipmentRepository shipmentRepository, IMessageBroker messageBroker, IEventProcessor eventProcessor)
+        public ShipmentCompletedHandler()
         {
-            _shipmentRepository = shipmentRepository;
-            _messageBroker = messageBroker;
-            _eventProcessor = eventProcessor;
         }
-        public Task HandleAsync(ShipmentCreated @event)
+        public Task HandleAsync(ShipmentCompleted @event)
         {
             Console.WriteLine("Nie robie głupot tylko sprawdzam czy działą komunikacja");
             return Task.CompletedTask;

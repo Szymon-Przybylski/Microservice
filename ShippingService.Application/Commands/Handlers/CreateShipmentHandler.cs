@@ -24,10 +24,10 @@ namespace ShippingService.Application.Commands.Handlers
         
         public async Task HandleAsync(CreateShipment command)
         {
-            
 
-            Shipment shipment = await _shipmentRepository.AddAsync(Shipment.Create(command.Id, command.ShipmentName));
-            await _eventProcessor.ProcessAsync(shipment.Events);
+            Shipment s = Shipment.Create(command.Id, command.ShipmentName);
+            await _shipmentRepository.AddAsync(s);
+            await _eventProcessor.ProcessAsync(s.Events);
         }
 
         private async Task<bool> ExistsShipmentWithGivenId(Guid id)

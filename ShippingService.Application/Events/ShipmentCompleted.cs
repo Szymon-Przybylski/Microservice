@@ -3,11 +3,11 @@ using Convey.CQRS.Events;
 
 namespace ShippingService.Application.Events
 {
-    public class ShipmentComplete : IEvent
+    public class ShipmentCompleted : IEvent
     {
         public Guid Id { get; set; }
         
-        public ShipmentComplete (Guid id)
+        public ShipmentCompleted (Guid id)
         {
             Id = id;
         }
