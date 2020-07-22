@@ -21,7 +21,13 @@ using ShippingService.Application;
 using ShippingService.Application.Events;
 using ShippingService.Application.Events.External;
 using ShippingService.Application.Services;
+using ShippingService.Core.Repositories;
 using ShippingService.Infrastructure.Exceptions;
+using ShippingService.Infrastructure.Mongo.CollectionProviding.Abstract;
+using ShippingService.Infrastructure.Mongo.CollectionProviding.Concrete;
+using ShippingService.Infrastructure.Mongo.Documents.Abstract;
+using ShippingService.Infrastructure.Mongo.Documents.Concrete;
+using ShippingService.Infrastructure.Mongo.Repositories;
 using ShippingService.Infrastructure.OutboxDecorators;
 using ShippingService.Infrastructure.Services;
 
@@ -44,8 +50,11 @@ namespace ShippingService.Infrastructure
                 .AddMessageOutbox(o => o.AddMongo());
             IServiceCollection services = builder.Services;
             
-            services.AddTransient<IDomainToIntegrationEventMapper, DomainToIntegrationEventMapper>();
-            services.AddTransient<IEventProcessor, EventProcessor>();
+            services.AddTransient<IObjectDocumentMapper,ObjectDocumentMapper>();
+            services.AddTransient<IShipmentRepository,ShipmentRepository>();
+            services.AddTransient<IMongoCollectionProvider,MongoCollectionProvider>();
+            services.AddTransient<IDomainToIntegrationEventMapper,DomainToIntegrationEventMapper>();
+            services.AddTransient<IEventProcessor,EventProcessor>();
             services.AddTransient<IMessageBroker, MessageBroker>();
 
             services.TryDecorate(typeof(ICommandHandler<>), typeof(OutboxCommandHandlerDecorator<>));

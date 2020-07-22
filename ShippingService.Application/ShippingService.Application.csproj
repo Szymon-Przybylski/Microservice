@@ -35,7 +35,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Commands\Handlers" />
       <Folder Include="Events\RejectedEvents" />
     </ItemGroup>
 

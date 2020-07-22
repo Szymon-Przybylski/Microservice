@@ -10,10 +10,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Exceptions\Concrete" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="Convey" Version="0.4.330" />
       <PackageReference Include="Convey.CQRS.Commands" Version="0.4.330" />
       <PackageReference Include="Convey.CQRS.Events" Version="0.4.330" />

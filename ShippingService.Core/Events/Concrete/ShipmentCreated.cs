@@ -1,4 +1,4 @@
-﻿using ShippingService.Core.Entities;
+﻿﻿using ShippingService.Core.Entities;
 using ShippingService.Core.Events.Abstract;
 
 namespace ShippingService.Core.Events.Concrete

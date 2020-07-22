@@ -14,7 +14,7 @@ namespace ShippingService.Infrastructure.Services
 
         public IEvent Map(IDomainEvent @event) => @event switch
         {
-            ShipmentCreated shipment => new ShipmentCreated(shipment.Id),
+            ShipmentCreated e => new ShipmentCreated(e.Id),
             _ => null
         };
     }

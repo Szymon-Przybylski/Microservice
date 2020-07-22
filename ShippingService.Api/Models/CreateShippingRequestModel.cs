@@ -1,4 +1,6 @@
-﻿namespace ShippingService.Api.Models
+﻿using System;
+
+namespace ShippingService.Api.Models
 {
     public class CreateShippingRequestModel
     {

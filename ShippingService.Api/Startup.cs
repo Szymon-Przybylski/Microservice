@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Convey;
+using Convey.CQRS.Commands;
+using Convey.CQRS.Events;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,9 +26,17 @@ namespace ShippingService.Api
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            var builder = ConveyBuilder
+                .Create(services)
+                .AddCommandHandlers()
+                .AddEventHandlers()
+                .AddInMemoryCommandDispatcher()
+                .AddInMemoryEventDispatcher();
             services.AddControllers();
+
+            return builder.Build();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
