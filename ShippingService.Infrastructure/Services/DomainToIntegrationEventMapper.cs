@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Convey.CQRS.Events;
+using ShippingService.Application.Events;
 using ShippingService.Application.Services;
 using ShippingService.Core.Events.Abstract;
 using ShippingService.Core.Events.Concrete;
-using ShipmentCreated = ShippingService.Application.Events.External.ShipmentCreated;
+
 
 namespace ShippingService.Infrastructure.Services
 {
@@ -14,7 +15,7 @@ namespace ShippingService.Infrastructure.Services
 
         public IEvent Map(IDomainEvent @event) => @event switch
         {
-            ShipmentCreated e => new ShipmentCreated(e.Id),
+            ShipmentCreated e => new ShipmentComplete(e.Id),
             _ => null
         };
     }

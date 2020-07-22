@@ -1,15 +1,16 @@
-﻿﻿using ShippingService.Core.Entities;
+﻿using System;
+using Convey.CQRS.Events;
 using ShippingService.Core.Events.Abstract;
 
 namespace ShippingService.Core.Events.Concrete
 {
-    public class ShipmentCreated : IDomainEvent
+    public class ShipmentCreated :IDomainEvent
     {
-        public Shipment Shipment { get; }
+        public Guid Id { get; set; }
         
-        public ShipmentCreated(Shipment shipment)
+        public ShipmentCreated (Guid id)
         {
-            Shipment = shipment;
+            Id = id;
         }
     }
 }

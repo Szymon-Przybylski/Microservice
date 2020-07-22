@@ -18,10 +18,11 @@ namespace ShippingService.Infrastructure.Mongo.Repositories
             _objectDocumentMapper = objectDocumentMapper;
             _mongoCollectionProvider = mongoCollectionProvider;
         }
-        public async Task AddAsync(Shipment shipment)
+        public async Task<Shipment> AddAsync(Shipment shipment)
         {
             await _mongoCollectionProvider.ShipmentDocumentCollection()
                 .InsertOneAsync(_objectDocumentMapper.Convert(shipment));
+            return shipment;
         }
 
         public Task UpdateAsync(Shipment shipment)

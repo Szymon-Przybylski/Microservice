@@ -21,7 +21,7 @@ namespace ShippingService.Core.Entities
                 throw new NotImplementedException();
             }
             Shipment shipment = new Shipment(id, shipmentName);
-            shipment.AddEvent(new ShipmentCreated(shipment));
+            shipment.AddEvent(new ShipmentCreated(shipment.Id));
             
             return shipment;
         }

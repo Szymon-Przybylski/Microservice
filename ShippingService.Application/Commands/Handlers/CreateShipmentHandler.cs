@@ -13,22 +13,21 @@ namespace ShippingService.Application.Commands.Handlers
     {
         private readonly IShipmentRepository _shipmentRepository;
         private readonly IMessageBroker _messageBroker;
-        
-        public CreateShipmentHandler(IShipmentRepository shipmentRepository, IMessageBroker messageBroker)
+        private readonly IEventProcessor _eventProcessor;
+
+        public CreateShipmentHandler(IShipmentRepository shipmentRepository, IMessageBroker messageBroker, IEventProcessor eventProcessor)
         {
             _shipmentRepository = shipmentRepository;
             _messageBroker = messageBroker;
+            _eventProcessor = eventProcessor;
         }
         
         public async Task HandleAsync(CreateShipment command)
         {
-            /*if (await ExistsShipmentWithGivenId(command.Id))
-            {
-                throw  new  ShipmentAlreadyExistsException(command.Id);
-            }*/
+            
 
-            await _shipmentRepository.AddAsync(Shipment.Create(command.Id, command.ShipmentName));
-            await _messageBroker.PublishAsync(new ShipmentCreated(command.Id));
+            Shipment shipment = await _shipmentRepository.AddAsync(Shipment.Create(command.Id, command.ShipmentName));
+            await _eventProcessor.ProcessAsync(shipment.Events);
         }
 
         private async Task<bool> ExistsShipmentWithGivenId(Guid id)

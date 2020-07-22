@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Convey.CQRS.Events;
@@ -33,6 +34,7 @@ namespace ShippingService.Infrastructure.Services
             }
 
             List<IEvent> integrationEvents = await HandleDomainEventsAsync(events);
+            Console.WriteLine("was here!");
             if (!integrationEvents.Any())
             {
                 return;
@@ -49,8 +51,10 @@ namespace ShippingService.Infrastructure.Services
             {
                 var eventType = eve.GetType();
                 _logger.LogTrace($"Handling a domain event: {eventType.Name}");
-                var handlerType = typeof(IDomainEventHandler<>).MakeGenericType();
-                dynamic handlers = scope.ServiceProvider.GetService(handlerType);
+
+                var handlerType = typeof(IDomainEventHandler<>).MakeGenericType(eventType);
+
+                dynamic handlers = scope.ServiceProvider.GetServices(handlerType);
                 foreach (dynamic handler in handlers)
                 {
                     await handler.HandlerAsync((dynamic) eve);

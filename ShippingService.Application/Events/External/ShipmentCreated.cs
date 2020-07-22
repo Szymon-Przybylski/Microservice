@@ -5,7 +5,7 @@ using ShippingService.Core.Events.Abstract;
 
 namespace ShippingService.Application.Events.External
 {
-    [Message("examples")]
+    [Message("shipment")]
     public class ShipmentCreated : IEvent
     {
         public Guid Id { get; set; }
