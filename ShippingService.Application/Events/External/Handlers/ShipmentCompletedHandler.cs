@@ -20,7 +20,7 @@ namespace ShippingService.Application.Events.External.Handlers
         }
         public Task HandleAsync(ShipmentCompleted @event)
         {
-            Console.WriteLine("Nie robie głupot tylko sprawdzam czy działą komunikacja");
+            Console.WriteLine("Nie robie głupot tylko sprawdzam czy działa komunikacja");
             return Task.CompletedTask;
 
         }
