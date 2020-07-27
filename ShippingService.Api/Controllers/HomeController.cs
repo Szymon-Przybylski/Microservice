@@ -6,6 +6,7 @@ namespace ShippingService.Api.Controllers
     [Route("api/")]
     public class HomeController : ControllerBase
     {
+        [HttpGet]
         public ActionResult HealthCheckMethod()
         {
             return Ok("Welcome to shipping service");

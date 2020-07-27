@@ -3,8 +3,10 @@ using Convey;
 using Convey.CQRS.Commands;
 using Convey.CQRS.Events;
 using Convey.CQRS.Queries;
+using Convey.Discovery.Consul;
 using Convey.Docs.Swagger;
 using Convey.HTTP;
+using Convey.LoadBalancing.Fabio;
 using Convey.MessageBrokers.CQRS;
 using Convey.MessageBrokers.Outbox;
 using Convey.MessageBrokers.Outbox.Mongo;
@@ -46,6 +48,8 @@ namespace ShippingService.Infrastructure
                 .AddExceptionToMessageMapper<ExceptionToMessageMapper>()
                 .AddMongo()
                 .AddRabbitMq()
+                .AddConsul()
+                .AddFabio()
                 .AddSwaggerDocs()
                 .AddWebApiSwaggerDocs()
                 .AddMessageOutbox(o => o.AddMongo());

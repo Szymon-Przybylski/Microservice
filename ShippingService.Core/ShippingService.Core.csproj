@@ -17,6 +17,7 @@
       <PackageReference Include="Convey.Discovery.Consul" Version="0.4.330" />
       <PackageReference Include="Convey.Docs.Swagger" Version="0.4.330" />
       <PackageReference Include="Convey.HTTP" Version="0.4.330" />
+      <PackageReference Include="Convey.LoadBalancing.Fabio" Version="0.4.330" />
       <PackageReference Include="Convey.Logging" Version="0.4.330" />
       <PackageReference Include="Convey.MessageBrokers" Version="0.4.330" />
       <PackageReference Include="Convey.MessageBrokers.CQRS" Version="0.4.330" />

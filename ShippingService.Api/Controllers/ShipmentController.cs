@@ -11,7 +11,7 @@ using ShippingService.Application.Queries;
 namespace ShippingService.Api.Controllers
 {
     [ApiController]
-    [Route("/api/shipment")]
+    [Route("/api/[controller]")]
     public class ShipmentController : ControllerBase
     {
         private readonly IQueryDispatcher _queryDispatcher;
