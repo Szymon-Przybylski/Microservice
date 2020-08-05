@@ -8,6 +8,7 @@ using Convey.HTTP;
 using Newtonsoft.Json.Linq;
 using RabbitMQ.Client;
 using ShippingService.Application.Commands;
+using ShippingService.Application.DTOs;
 using ShippingService.Application.Services;
 using ShippingService.Core.Entities;
 using ShippingService.Core.Repositories;
@@ -28,8 +29,9 @@ namespace ShippingService.Application.Events.External.Handlers
         }
         public async Task HandleAsync(PaymentCompleted @event)
         {
-            string shipmentName = _paymentService.GetPaymentData(@event.Id);
-            Shipment s = Shipment.Create(@event.Id, shipmentName );
+            
+            PaymentDTO payment = await _paymentService.GetPaymentData(@event.PaymentId);
+            Shipment s = Shipment.Create(@event.PaymentId, payment.OrderId.ToString() );
             
 
             await _shipmentRepository.AddAsync(s);

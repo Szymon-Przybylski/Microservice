@@ -8,13 +8,11 @@ namespace ShippingService.Application.Events.External
     [Message("payments")]
     public class PaymentCompleted : IEvent
     {
-        public Guid Id { get; set; }
-        public string PaymentName { get; set; }
-        
-        public PaymentCompleted (Guid id, string paymentName)
+        public Guid PaymentId { get; set; }
+
+        public PaymentCompleted (Guid id)
         {
-            Id = id;
-            PaymentName = paymentName;
+            PaymentId = id;
         }
     }
 }
