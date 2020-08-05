@@ -12,13 +12,11 @@ namespace ShippingService.Application.Commands.Handlers
     public class CreateShipmentHandler : ICommandHandler<CreateShipment>
     {
         private readonly IShipmentRepository _shipmentRepository;
-        private readonly IMessageBroker _messageBroker;
         private readonly IEventProcessor _eventProcessor;
 
-        public CreateShipmentHandler(IShipmentRepository shipmentRepository, IMessageBroker messageBroker, IEventProcessor eventProcessor)
+        public CreateShipmentHandler(IShipmentRepository shipmentRepository, IEventProcessor eventProcessor)
         {
             _shipmentRepository = shipmentRepository;
-            _messageBroker = messageBroker;
             _eventProcessor = eventProcessor;
         }
         

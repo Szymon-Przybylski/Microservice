@@ -32,7 +32,6 @@ using ShippingService.Infrastructure.Mongo.Documents.Concrete;
 using ShippingService.Infrastructure.Mongo.Repositories;
 using ShippingService.Infrastructure.OutboxDecorators;
 using ShippingService.Infrastructure.Services;
-using ShipmentCompleted = ShippingService.Application.Events.External.ShipmentCompleted;
 
 namespace ShippingService.Infrastructure
 {
@@ -58,6 +57,7 @@ namespace ShippingService.Infrastructure
             services.AddTransient<IObjectDocumentMapper,ObjectDocumentMapper>();
             services.AddTransient<IShipmentRepository,ShipmentRepository>();
             services.AddTransient<IMongoCollectionProvider,MongoCollectionProvider>();
+            services.AddTransient<IPaymentService, PaymentService>();
             services.AddTransient<IDomainToIntegrationEventMapper,DomainToIntegrationEventMapper>();
             services.AddTransient<IEventProcessor,EventProcessor>();
             services.AddTransient<IMessageBroker, MessageBroker>();
@@ -80,7 +80,7 @@ namespace ShippingService.Infrastructure
                 .UseConvey()
                 .UsePublicContracts<ShipmentAttribute>()
                 .UseRabbitMq()
-                .SubscribeEvent<ShipmentCompleted>();
+                .SubscribeEvent<PaymentCompleted>();
             return app;
         }
     }

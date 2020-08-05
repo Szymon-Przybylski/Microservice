@@ -9,7 +9,7 @@ namespace ShippingService.Core.Entities
         
         public Shipment(Guid id, string shipmentName, int version = 0)
         {
-            Id = new AggregateId().Value;
+            Id = id;
             ShipmentName = shipmentName;
             Version = version;
         }

@@ -5,14 +5,16 @@ using ShippingService.Core.Events.Abstract;
 
 namespace ShippingService.Application.Events.External
 {
-    [Message("shipment")]
-    public class ShipmentCompleted : IEvent
+    [Message("payments")]
+    public class PaymentCompleted : IEvent
     {
         public Guid Id { get; set; }
+        public string PaymentName { get; set; }
         
-        public ShipmentCompleted (Guid id)
+        public PaymentCompleted (Guid id, string paymentName)
         {
             Id = id;
+            PaymentName = paymentName;
         }
     }
 }

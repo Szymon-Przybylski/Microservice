@@ -21,9 +21,15 @@ namespace ShippingService.Infrastructure.Mongo.Queries.Handlers
         {
             ShipmentDocument resource = await _mongoCollectionProvider.ShipmentDocumentCollection()
                 .Find(x => x.Id == query.ShipmentId)
-                .SingleOrDefaultAsync();
+                .FirstOrDefaultAsync();
             if (resource is null)
             {
+
+                var x = await _mongoCollectionProvider.ShipmentDocumentCollection().Find(x => true).FirstOrDefaultAsync();
+                
+                
+                
+                
                 return null;
             }
 

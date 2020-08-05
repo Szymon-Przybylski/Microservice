@@ -23,7 +23,7 @@ namespace ShippingService.Api.Controllers
             _commandDispatcher = commandDispatcher;
         }
 
-        [HttpGet("id:Guid")]
+        [HttpGet("{id:Guid}")]
         public async Task<ActionResult<ShipmentDTO>> GetShipment(Guid id)
         {
             return Ok(await _queryDispatcher.QueryAsync(new GetShipment
